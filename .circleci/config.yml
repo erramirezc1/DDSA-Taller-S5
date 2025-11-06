@@ -1,4 +1,4 @@
-version: '2.1'
+version: "2.1"
 orbs:
   node: circleci/node@5.1.0
 
@@ -22,16 +22,15 @@ jobs:
       - checkout:
           path: ~/project/
       - node/install:
-          node-version: '20.9'
-      - run: node --version 
+          node-version: "20.9"
+      - run: node --version
       - run: npm i -g @railway/cli
       - run:
           name: Deploy to Railway App
           command: |
             cd bankchurn-api
-            railway up --service=pacific-clarity
+            railway up --service=capable-nurturing
             railway up --detach
-
 
 tags_only: &tags_only
   filters:
